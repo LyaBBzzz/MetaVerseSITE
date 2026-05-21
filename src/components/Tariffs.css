@@ -1,0 +1,106 @@
+.tariffs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-card {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Add spaceship as background image like in the design, wait, the design doesn't show it explicitly as a separate image, it might be 1.png, 2.png, 3.png used below. I'll make the background simple for now and just use text */
+}
+
+.about-content {
+  max-width: 500px;
+}
+
+.section-title {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-red);
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.tariffs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.tariff-card {
+  padding: 40px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+  overflow: visible; /* Prevents large images from being cut off at the top */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.tariff-card:hover {
+  transform: translateY(-15px);
+}
+
+/* Image transition logic */
+.tariff-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tariff-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--accent-red);
+}
+
+.tariff-desc {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-light);
+  margin-bottom: auto;
+}
+
+.tariff-image-wrapper {
+  height: 420px; 
+  width: 130%; 
+  margin-top: -60px; /* Give it space upwards without expanding the card too much */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%), linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-composite: intersect;
+}
+
+
+
+/* Specific adjustment for the 2nd tariff image which has a hard right edge */
+.tariff-image-wrapper-2 {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 50%, transparent 75%), linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 50%, transparent 75%), linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+@media (max-width: 992px) {
+  .tariffs-grid {
+    grid-template-columns: 1fr;
+  }
+}

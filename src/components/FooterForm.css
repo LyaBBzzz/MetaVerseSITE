@@ -1,0 +1,152 @@
+.footer-section {
+  display: flex;
+  align-items: center;
+  padding: 0; /* Remove default padding to fit image nicely */
+  min-height: 480px;
+  overflow: visible !important; /* Allow the image to break out of the card */
+}
+
+.footer-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: flex-end; /* Align to the bottom of the form section */
+  min-height: 580px;
+  margin-top: -100px; /* Break out of the top of the card */
+  position: relative;
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  z-index: 10; /* Bring image to the front */
+  margin-right: -100px; /* Overlap the form */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%), linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%), linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.footer-image {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures the whole image fits without cropping */
+  transform: translateY(0) translateX(20px); /* Adjust position slightly right without scale */
+}
+
+.footer-form-wrapper {
+  flex: 1;
+  padding: 50px 50px 50px 120px; /* Extra left padding so text doesn't hide behind image */
+  margin: 40px 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--bg-color);
+  border-radius: 32px;
+  box-shadow: var(--shadow-inset); /* carved in neumorphic style */
+  z-index: 1;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.form-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--accent-red);
+  margin-bottom: 10px;
+}
+
+.form-desc {
+  font-size: 18px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+
+
+.input-group .neumorphic-input {
+  padding: 15px 25px; /* Adjust padding to look balanced without the icon */
+  box-shadow: var(--shadow-outset-sm); /* outset to contrast with inset wrapper */
+  background: var(--bg-color);
+}
+.input-group .neumorphic-input:focus {
+  box-shadow: var(--shadow-inset);
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+  .footer-section {
+    flex-direction: column;
+  }
+  .footer-image-wrapper {
+    width: 100%;
+    border-radius: 32px 32px 0 0;
+    min-height: 300px;
+    margin-top: 0;
+    margin-right: 0;
+    align-self: center;
+  }
+  .footer-image {
+    max-width: 100%;
+    transform: none;
+  }
+  .footer-form-wrapper {
+    padding: 40px;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(232, 236, 242, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-content {
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 16px 16px 32px #c2ccd9, -16px -16px 32px #ffffff;
+  animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
