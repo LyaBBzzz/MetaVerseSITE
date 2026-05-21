@@ -206,3 +206,18 @@
     min-height: auto;
   }
 }
+
+@media (max-width: 480px) {
+  .title-left, .title-right {
+    font-size: 40px;
+  }
+  .hero-title-split {
+    top: 40px;
+    padding: 0 10px;
+  }
+  .hero-image-wrapper {
+    max-width: 250px;
+    height: 250px;
+    margin: 30px auto 0;
+  }
+}

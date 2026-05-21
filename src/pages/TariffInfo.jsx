@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './TariffInfo.css';
 
 const TariffInfo = () => {
   const { id } = useParams();
@@ -47,10 +48,10 @@ const TariffInfo = () => {
   const tariff = tariffsData[id] || tariffsData[1];
 
   return (
-    <div className="animate-fade-in-up" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '40px', alignItems: 'center', padding: '0 20px', flexWrap: 'wrap' }}>
+    <div className="animate-fade-in-up tariff-info-container">
       
       {/* Контентная часть (слева) */}
-      <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      <div className="tariff-info-content">
         
         <div>
           <h3 style={{ color: 'var(--accent-red)', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '5px' }}>
@@ -98,7 +99,7 @@ const TariffInfo = () => {
       </div>
 
       {/* Изображение (справа) */}
-      <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', aspectRatio: '1 / 1', minHeight: '400px' }}>
+      <div className="tariff-info-image-container">
         {/* Неоморфный круг на фоне для эффекта */}
         <div className="neumorphic-card" style={{
           position: 'absolute',
