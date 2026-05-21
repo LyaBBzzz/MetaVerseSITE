@@ -9,7 +9,19 @@
   display: flex;
   align-items: center;
   position: relative;
-  /* Add spaceship as background image like in the design, wait, the design doesn't show it explicitly as a separate image, it might be 1.png, 2.png, 3.png used below. I'll make the background simple for now and just use text */
+  overflow: visible !important; /* Allow flowers to overlap */
+}
+
+.about-flowers {
+  position: absolute;
+  right: 0;
+  top: -80px;
+  width: 350px;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.15));
+  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
 }
 
 .about-content {
@@ -102,5 +114,20 @@
 @media (max-width: 992px) {
   .tariffs-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-flowers {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: 30px;
+    width: 250px;
+  }
+  
+  .about-card {
+    flex-direction: column;
+    text-align: center;
   }
 }

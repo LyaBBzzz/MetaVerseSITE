@@ -32,8 +32,8 @@ const Hero = () => {
 
         <div className="hero-action-box">
           <div className="neumorphic-circle-time">
-            <span className="time-label">встречаемся</span>
-            <span className="time-value">в&nbsp;19:00</span>
+            <span className="time-label">встречаемся в</span>
+            <span className="time-value">19:00</span>
           </div>
           <button 
             className="neumorphic-button" 

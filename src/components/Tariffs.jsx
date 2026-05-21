@@ -33,6 +33,11 @@ const Tariffs = () => {
             Для всех, кто интересуется наукой, физикой и&nbsp;космологией, и&nbsp;хочет узнать больше о&nbsp;метавселенных и&nbsp;их значении для нашего понимания Вселенной.
           </p>
         </div>
+        <img 
+          src="/images/Butterfly.png" 
+          alt="Декоративная бабочка" 
+          className="about-flowers"
+        />
       </div>
 
       <div className="tariffs-grid">

@@ -12,6 +12,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AtFallback';
+  src: local('Inter'), local('Arial'), local('sans-serif');
+  unicode-range: U+0040; /* The @ symbol */
+}
+
 :root {
   /* Colors */
   --bg-color: #e8ecf2; /* Darker off-white for higher contrast neumorphism */
@@ -38,7 +44,7 @@
 }
 
 body {
-  font-family: 'Durik', sans-serif;
+  font-family: 'AtFallback', 'Durik', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-dark);
   min-height: 100vh;
@@ -79,7 +85,7 @@ body {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-family: 'Durik', sans-serif;
+  font-family: 'AtFallback', 'Durik', sans-serif;
 }
 
 .neumorphic-button:hover {
@@ -104,7 +110,7 @@ body {
   box-shadow: var(--shadow-inset);
   outline: none;
   transition: all 0.3s ease;
-  font-family: 'Durik', sans-serif;
+  font-family: 'AtFallback', 'Durik', sans-serif;
 }
 
 .neumorphic-input::placeholder {
