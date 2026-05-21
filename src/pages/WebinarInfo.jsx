@@ -1,13 +1,14 @@
 import React from 'react';
 import '../components/Tariffs.css'; // Reuse some typography styles
+import './WebinarInfo.css';
 
 const WebinarInfo = () => {
   return (
-    <div className="neumorphic-card animate-fade-in-up" style={{ minHeight: '600px', padding: '60px', display: 'flex', gap: '60px', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div className="neumorphic-card animate-fade-in-up webinar-container">
       
       {/* Контентная часть */}
-      <div style={{ flex: '1 1 500px' }}>
-        <h1 className="title-large" style={{ fontSize: '60px', marginBottom: '40px', color: 'var(--text-dark)', textShadow: 'none' }}>
+      <div className="webinar-content">
+        <h1 className="title-large webinar-title">
           О ВЕБИНАРЕ
         </h1>
         
@@ -39,7 +40,7 @@ const WebinarInfo = () => {
       </div>
 
       {/* Изображение */}
-      <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+      <div className="webinar-image-container">
         <div className="neumorphic-card" style={{
           position: 'absolute',
           width: '80%',
