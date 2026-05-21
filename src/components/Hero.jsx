@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="hero-content animate-fade-in-up delay-300">
         <div className="hero-info-box">
           <p className="hero-desc">
-            На этом вебинаре мы рассмотрим самые новые и удивительные открытия в метавселенных, которые могут изменить наше понимание Вселенной
+            На&nbsp;этом вебинаре мы рассмотрим самые новые и&nbsp;удивительные открытия в&nbsp;метавселенных, которые могут изменить наше понимание Вселенной
           </p>
           <div className="neumorphic-chip">
             <div className="chip-text">
@@ -32,8 +32,8 @@ const Hero = () => {
 
         <div className="hero-action-box">
           <div className="neumorphic-circle-time">
-            <span className="time-label">встречаемся в</span>
-            <span className="time-value">19:00</span>
+            <span className="time-label">встречаемся</span>
+            <span className="time-value">в&nbsp;19:00</span>
           </div>
           <button 
             className="neumorphic-button" 

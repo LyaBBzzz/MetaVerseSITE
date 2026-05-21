@@ -24,6 +24,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  aspect-ratio: 1 / 1;
+  min-height: 400px;
 }
 
 @media (max-width: 768px) {
@@ -39,6 +41,10 @@
   .webinar-content,
   .webinar-image-container {
     flex: 1 1 100%;
+  }
+  
+  .webinar-image-container {
+    min-height: 300px;
   }
 }
 

@@ -98,7 +98,7 @@ const TariffInfo = () => {
       </div>
 
       {/* Изображение (справа) */}
-      <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+      <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', aspectRatio: '1 / 1', minHeight: '400px' }}>
         {/* Неоморфный круг на фоне для эффекта */}
         <div className="neumorphic-card" style={{
           position: 'absolute',
@@ -109,6 +109,8 @@ const TariffInfo = () => {
           zIndex: 0
         }}></div>
         <img src={tariff.img} alt={tariff.title} className="animate-float" style={{ 
+          width: '100%',
+          height: 'auto',
           maxWidth: '105%', 
           position: 'relative', 
           zIndex: 1,

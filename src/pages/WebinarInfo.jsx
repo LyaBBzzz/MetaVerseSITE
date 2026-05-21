@@ -16,7 +16,7 @@ const WebinarInfo = () => {
           <div className="neumorphic-card" style={{ boxShadow: 'var(--shadow-inset)', background: 'transparent' }}>
             <h2 style={{ color: 'var(--accent-red)', marginBottom: '15px' }}>Что такое Метавселенная?</h2>
             <p style={{ color: 'var(--text-light)', lineHeight: '1.6' }}>
-              Метавселенная — это постоянно действующее виртуальное пространство, в котором люди могут взаимодействовать друг с другом и с цифровыми объектами через свои аватары, с помощью технологий виртуальной реальности.
+              Метавселенная — это постоянно действующее виртуальное пространство, в&nbsp;котором люди могут взаимодействовать друг с&nbsp;другом и&nbsp;с&nbsp;цифровыми объектами через свои аватары, с&nbsp;помощью технологий виртуальной реальности.
             </p>
           </div>
 
@@ -26,14 +26,14 @@ const WebinarInfo = () => {
               <li>История возникновения концепции виртуальных миров</li>
               <li>Экономика метавселенных: NFT, криптовалюты и виртуальная недвижимость</li>
               <li>Технологии: VR, AR, нейроинтерфейсы</li>
-              <li>Будущее: как изменится наша работа и повседневная жизнь</li>
+              <li>Будущее: как изменится наша работа и&nbsp;повседневная жизнь</li>
             </ul>
           </div>
 
           <div className="neumorphic-card" style={{ boxShadow: 'var(--shadow-inset)', background: 'transparent' }}>
             <h2 style={{ color: 'var(--accent-red)', marginBottom: '15px' }}>Спикер</h2>
             <p style={{ color: 'var(--text-light)', lineHeight: '1.6' }}>
-              Ведущий эксперт по виртуальным технологиям и исследованию метавселенных, автор научных статей и книг по цифровой экономике будущего.
+              Ведущий эксперт по&nbsp;виртуальным технологиям и&nbsp;исследованию метавселенных, автор научных статей и&nbsp;книг по&nbsp;цифровой экономике будущего.
             </p>
           </div>
         </div>
@@ -50,6 +50,8 @@ const WebinarInfo = () => {
           zIndex: 0
         }}></div>
         <img src="/images/AboutVebinar.png" alt="О вебинаре" className="animate-float" style={{ 
+          width: '100%',
+          height: 'auto',
           maxWidth: '110%', 
           position: 'relative', 
           zIndex: 1,
