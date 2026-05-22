@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-left">
           <div className="footer-logo">METAVERSE</div>
           <div className="footer-credits">
-            designed and developed by <span>LyaBBzzz</span>
+            designed and developed by <span>Klimanov D.</span>
           </div>
         </div>
 

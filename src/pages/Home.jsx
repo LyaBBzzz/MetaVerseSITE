@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Hero from '../components/Hero';
 import Tariffs from '../components/Tariffs';
 import FooterForm from '../components/FooterForm';
 
 const Home = () => {
   const location = useLocation();
+  useDocumentTitle('MetaVerse | Курс по метавселенным');
 
   useEffect(() => {
+    let timeoutId = null;
+
     const handleScroll = () => {
-      sessionStorage.setItem('homeScrollPos', window.scrollY);
+      if (timeoutId) return;
+      timeoutId = setTimeout(() => {
+        sessionStorage.setItem('homeScrollPos', window.scrollY);
+        timeoutId = null;
+      }, 150);
     };
 
     if (!location.hash) {
@@ -21,8 +29,11 @@ const Home = () => {
       }
     }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [location.hash]);
 
   return (

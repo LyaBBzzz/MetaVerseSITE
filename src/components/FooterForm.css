@@ -85,6 +85,14 @@
   box-shadow: var(--shadow-inset);
 }
 
+.input-error {
+  box-shadow: inset 2px 2px 5px rgba(230, 57, 70, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.5), 0 0 0 1px var(--accent-red) !important;
+}
+
+.input-error:focus {
+  box-shadow: inset 4px 4px 10px rgba(230, 57, 70, 0.15), inset -4px -4px 10px rgba(255, 255, 255, 0.5), 0 0 0 1px var(--accent-red) !important;
+}
+
 .form-submit {
   width: 100%;
   margin-top: 10px;

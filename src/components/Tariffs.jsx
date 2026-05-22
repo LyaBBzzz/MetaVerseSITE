@@ -1,32 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { tariffsData } from '../data/tariffs';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './Tariffs.css';
 
 const Tariffs = () => {
-  const tariffs = [
-    {
-      id: 1,
-      title: "Базовый",
-      desc: "Узнаете о\u00A0самых новых открытиях в\u00A0метавселенных и\u00A0прослушаете лекцию",
-      img: "/images/1.png"
-    },
-    {
-      id: 2,
-      title: "Продвинутый",
-      desc: "Разберетесь что такое метавселенные и\u00A0как они образуются",
-      img: "/images/3.png"
-    },
-    {
-      id: 3,
-      title: "Премиум",
-      desc: "Получите ответы на\u00A0 вопросы и\u00A0сможете задать свои",
-      img: "/images/2.png"
-    }
-  ];
+  const tariffs = Object.values(tariffsData);
+  const [headerRef, isHeaderVisible] = useIntersectionObserver();
+  const [gridRef, isGridVisible] = useIntersectionObserver({ threshold: 0.05 });
 
   return (
-    <div className="tariffs-section" id="tariffs">
-      <div className="neumorphic-card about-card animate-fade-in-up">
+    <section className="tariffs-section" id="tariffs">
+      <article 
+        ref={headerRef} 
+        className={`neumorphic-card about-card ${isHeaderVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+      >
         <div className="about-content">
           <h2 className="section-title">ДЛЯ КОГО:</h2>
           <p className="section-desc">
@@ -37,23 +25,28 @@ const Tariffs = () => {
           src="/images/Butterfly.png"
           alt="Декоративная бабочка"
           className="about-flowers"
+          loading="lazy"
         />
-      </div>
+      </article>
 
-      <div className="tariffs-grid">
+      <div className="tariffs-grid" ref={gridRef}>
         {tariffs.map((tariff, index) => (
-          <div key={tariff.id} className={`animate-fade-in-up delay-${(index + 1) * 100}`} style={{ display: 'flex' }}>
+          <article 
+            key={tariff.id} 
+            className={`${isGridVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-${(index + 1) * 100}`} 
+            style={{ display: 'flex' }}
+          >
             <Link to={`/tariffs/${tariff.id}`} className="neumorphic-card tariff-card" style={{ flex: 1 }}>
               <h3 className="tariff-title">{tariff.title}</h3>
-              <p className="tariff-desc">{tariff.desc}</p>
+              <p className="tariff-desc">{tariff.shortDesc}</p>
               <div className={`tariff-image-wrapper tariff-image-wrapper-${tariff.id}`}>
-                <img src={tariff.img} alt={tariff.title} className="tariff-image" />
+                <img src={tariff.imgShort} alt={tariff.title} className="tariff-image" loading="lazy" />
               </div>
             </Link>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
