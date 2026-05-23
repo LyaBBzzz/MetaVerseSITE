@@ -1,18 +1,55 @@
-# React + Vite
+#  MetaVerse - сайт-приглашение на вебинар
 
-https://meta-verse-kappa.vercel.app/
+## Технологический стек
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **[React 19](https://react.dev/)** — библиотека для построения пользовательских интерфейсов.
+- **[Vite 8](https://vitejs.dev/)** — сверхбыстрый инструмент сборки и сервер разработки.
+- **[React Router 7](https://reactrouter.com/)** — маршрутизация (роутинг) в приложении.
+- **Vanilla CSS** — чистый CSS без использования тяжелых UI-фреймворков. Применяются CSS-переменные для легкой смены тем и инкапсуляция стилей для компонентов.
+- **ESLint** — поддержка чистоты кода и соблюдение стандартов.
 
-Currently, two official plugins are available:
+## Установка и запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. **Клонируйте репозиторий** (или скачайте файлы проекта):
+   ```bash
+   git clone <url_вашего_репозитория>
+   cd MetaVerse
+   ```
 
-## React Compiler
+2. **Установите зависимости:**
+   Убедитесь, что у вас установлен [Node.js](https://nodejs.org/) (версии 18+).
+   ```bash
+   npm install
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. **Запустите сервер для разработки:**
+   ```bash
+   npm run dev
+   ```
+   После этого проект будет доступен по адресу: `http://localhost:5173`
 
-## Expanding the ESLint configuration
+4. **Сборка для продакшена:**
+   ```bash
+   npm run build
+   ```
+   Оптимизированные файлы появятся в папке `dist/`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Структура проекта
+
+```text
+MetaVerse/
+├── public/                 # Статические ресурсы (шрифты, иконки)
+│   ├── images/             # Изображения (PNG, SVG)
+│   └── ...
+├── src/
+│   ├── components/         # Переиспользуемые UI-компоненты (Hero, Tariffs, FooterForm и др.)
+│   ├── data/               # Моковые данные (tariffs.js)
+│   ├── hooks/              # Кастомные React-хуки (useIntersectionObserver, useDocumentTitle)
+│   ├── pages/              # Компоненты страниц (Home, TariffInfo, WebinarInfo)
+│   ├── App.jsx             # Главный компонент и настройка роутинга
+│   ├── index.css           # Глобальные стили, переменные и анимации
+│   └── main.jsx            # Точка входа в React-приложение
+├── index.html              # Базовый HTML-шаблон
+├── package.json            # Зависимости и скрипты
+└── vite.config.js          # Конфигурация сборщика Vite
+```
